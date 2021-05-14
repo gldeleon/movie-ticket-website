@@ -1,0 +1,46 @@
+{
+	"name": "vluzrmos/lumen-cors",
+	"description": "A Simple Lumen CORS.",
+	"keywords": ["Lumen","Laravel","CORS"],
+	"license": "MIT",
+    "type":"package",
+	"authors": [
+		{
+			"name": "Vagner do Carmo",
+			"email": "vluzrmos@gmail.com"
+		}
+	],
+	"require": {
+        "php": ">=5.5.9",
+		"illuminate/support": "~5.0",
+		"illuminate/http": "~5.0"
+	},
+	"require-dev":{
+		"phpunit/phpunit": "~4.0",
+		"laravel/lumen": "~5.0",
+	  	"fabpot/php-cs-fixer": "~2.0"
+	},
+	"autoload": {
+		"psr-4": {
+			"Vluzrmos\\LumenCors\\": "src/"
+		},
+	  "files":[
+		"src/helpers.php"
+	  ]
+	},
+	"autoload-dev": {
+		"psr-4": {
+			"Vluzrmos\\LumenCors\\Testing\\": "tests/LumenCors/"
+		}
+	},
+	"config":{
+	  "preferred-install": "dist"
+	},
+	"extra": {
+	  "branch-alias": {
+		"dev-master": "2.1-dev"
+	  }
+	},
+	"minimum-stability" : "dev"
+}
+

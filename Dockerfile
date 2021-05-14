@@ -32,8 +32,6 @@ RUN docker-php-ext-install pdo pdo_mysql pdo_pgsql
 
 RUN docker-php-ext-install bcmath
 
-RUN echo "extension=mongodb.so" >> /usr/local/etc/php/conf.d/mongodb.ini
-
 RUN apt-get update && apt-get install -y libpng-dev
 
 RUN apt-get install -y \
@@ -91,9 +89,27 @@ RUN npm install vue
 
 RUN npm install --global vue-cli
 
-#.......instalar sqlite
+#.......instalar mariadb
 
-RUN sudo apt-get install -y sqlite3 libsqlite3-dev
-RUN mkdir /db
-RUN /usr/bin/sqlite3 /db/movie_ticket.db
-CMD /bin/bash
+RUN apt-get -y install mariadb-server
+
+
+
+#.......instalar NODE y npm
+
+RUN apt-get install -y curl software-properties-common
+
+RUN apt-get update
+
+RUN curl -sL https://deb.nodesource.com/setup_12.x | bash -
+
+RUN apt-get install -y nodejs
+
+RUN nodejs -v
+
+RUN npm --version
+
+
+#.......instalar express
+
+RUN npm i express
